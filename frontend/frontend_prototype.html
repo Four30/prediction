@@ -6,10 +6,30 @@
     <body>
         <div id = "info_collection">
             <form>
-                <label for = "as/alevel">Enter 0 for AS level, and 1 for A level.</label><br>
-                <input id = "as/alevel" type = "radio" value ="0" name="education_level"><input id = "as/alevel" type ="radio"><br><br>
-                <label for = "sub_code">What is the subject code?</label><br>
-                <input id = "sub_code" type ="number" name="subject_code"><br><br>
+                <label for = "edu_level">Pick your education level.</label><br>
+                <select>
+                    <option>
+                        <input id="edu_level" name="education-AS" value="AS Level">
+                    </option>
+                    <option>
+                        <input id ="edu_level" name="education-A2" value = "A Level">
+                    </option>
+                </select>
+                <label for = "sub_code">Pick subject to predict.</label><br>
+                <select>
+                    <option>
+                        <input id = "sub_code" type ="number" name="math_code" value="9709-mathematics">
+                    </option>
+                    <option>
+                        <input id = "sub_code" type ="number" name="bio_code"value="9700-biology">
+                    </option>
+                    <option>
+                        <input id = "sub_code" type ="number" name="chem_code"value="9701-chemistry">
+                    </option>
+                    <option>
+                        <input id = "sub_code" type ="number" name="phy_code"value="9702-physics">
+                    </option>
+                </select>
                 <label for = "component">What are the components you took?</label><br>
                 <input id = "component" type ="text" name="components"><br><br>
                 <label for = "score">What score do you predict for yourself (with weighting applied)</label><br>
