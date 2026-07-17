@@ -7,26 +7,16 @@
         <div id = "info_collection">
             <form>
                 <label for = "edu_level">Pick your education level.</label><br>
-                <select>
-                    <option>
-                        <input id="edu_level" name="education-AS" value="AS Level">
-                    </option>
-                    <option>
-                        <input id ="edu_level" name="education-A2" value = "A Level">
-                    </option>
+                <select id="edu_level">
+                    <option name="education-AS">AS Level</option>
+                    <option  name="education-A2">A Level</option>
                 </select>
                 <label for = "sub_code">Pick subject to predict.</label><br>
                 <select id = "sub_code">
                     <option  name="math_code">9709-mathematics</option>
-                    <option>
-                        <input id = "sub_code" type ="number" name="bio_code"value="9700-biology">
-                    </option>
-                    <option>
-                        <input id = "sub_code" type ="number" name="chem_code"value="9701-chemistry">
-                    </option>
-                    <option>
-                        <input id = "sub_code" type ="number" name="phy_code"value="9702-physics">
-                    </option>
+                    <option name="bio_code">9700-biology</option>
+                    <option name="chem_code">9701-chemistry</option>
+                    <option name="phy_code">9702-physics</option>
                 </select>
                 <label for = "component">What are the components you took?</label><br>
                 <input id = "component" type ="text" name="components"><br><br>
