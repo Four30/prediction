@@ -8,20 +8,22 @@
             <form>
                 <label for = "edu_level">Pick your education level.</label><br>
                 <select id="edu_level">
+                    <option name="blank"></option>
                     <option name="education-AS">AS Level</option>
                     <option  name="education-A2">A Level</option>
-                </select>
+                </select><br><br>
                 <label for = "sub_code">Pick subject to predict.</label><br>
                 <select id = "sub_code">
+                    <option name="blank"></option>
                     <option  name="math_code">9709-mathematics</option>
                     <option name="bio_code">9700-biology</option>
                     <option name="chem_code">9701-chemistry</option>
                     <option name="phy_code">9702-physics</option>
-                </select>
+                </select><br><br>
                 <label for = "component">What are the components you took?</label><br>
                 <input id = "component" type ="text" name="components"><br><br>
                 <label for = "score">What score do you predict for yourself (with weighting applied)</label><br>
-                <input id ="score" type ="number" name="total_score">
+                <input id ="score" name="total_score">
             </form>
 
         </div>
