@@ -1,9 +1,21 @@
 /*By Qwuent, a learner lMAOOO*/
 
 .info_collection {
+   position:fixed;
+   top:50%;
+   left:50%;
+   width:250px;
+}
+/*#form{
+   position:fixed;
+   top:50%;
+   left:50%;
+   width:250px;
+*/
+/*.info_collection {
     display:flex;
     justify-content: center;
     align-items: center;
     padding:5% 5% 5% 5%;
     width:10;
-}
+    */
