@@ -5,8 +5,6 @@
   justify-content: center;   /* Centers horizontally */
   align-items: center;       /* Centers vertically */
   background-color: #9ec2f9; /* Light background for contrast */
-  width: 50%;
-  height: 50%;
 }
 
 .box{
