@@ -2,9 +2,19 @@
 
 .info {
   display: flex;
-  width: 200px;
-  justify-content: center;
-  align-items: center;
+  justify-content: center;   /* Centers horizontally */
+  align-items: center;       /* Centers vertically */
+  min-height: 100vh;         /* Uses full screen height */
+  background-color: #f0f2f5; /* Light background for contrast */
+}
+
+.box{
+  width: 100%;
+  max-width: 400px;          /* Prevents box from getting too wide */
+  padding: 30px;             /* Spacing inside the box */
+  background-color: #ffffff; /* White box background */
+  border-radius: 8px;        /* Rounded corners */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Subtle shadow for 3D effect */
 }
 /*#form{
    position:fixed;
