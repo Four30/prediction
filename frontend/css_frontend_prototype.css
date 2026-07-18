@@ -10,6 +10,7 @@
 .box{
   padding: 30px;             /* Spacing inside the box */
   border-radius: 8px;        /* Rounded corners */
+  background-color: aliceblue;
   box-shadow: 0 4px 12px rgba(93, 92, 92, 0.1); /* Subtle shadow for 3D effect */
 }
 /*#form{
