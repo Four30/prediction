@@ -4,17 +4,15 @@
   display: flex;
   justify-content: center;   /* Centers horizontally */
   align-items: center;       /* Centers vertically */
-  background-color: #f0f2f5; /* Light background for contrast */
+  background-color: #9ec2f9; /* Light background for contrast */
   width: 250px;
 }
 
 .box{
-
-  min-height: 100vh;     /* Uses full screen height */    
   padding: 30px;             /* Spacing inside the box */
-  background-color: #ffffff; /* White box background */
+  background-color: #d0ddf3; /* White box background */
   border-radius: 8px;        /* Rounded corners */
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Subtle shadow for 3D effect */
+  box-shadow: 0 4px 12px rgba(93, 92, 92, 0.1); /* Subtle shadow for 3D effect */
 }
 /*#form{
    position:fixed;
