@@ -6,6 +6,7 @@
   align-items: center;       /* Centers vertically */
   min-height: 100vh;         /* Uses full screen height */
   background-color: #f0f2f5; /* Light background for contrast */
+  width: 250px;
 }
 
 .box{
