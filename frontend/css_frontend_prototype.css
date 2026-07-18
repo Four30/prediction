@@ -4,12 +4,10 @@
   display: flex;
   justify-content: center;   /* Centers horizontally */
   align-items: center;       /* Centers vertically */
-  background-color: #9ec2f9; /* Light background for contrast */
 }
 
 .box{
   padding: 30px;             /* Spacing inside the box */
-  background-color: #d0ddf3; /* White box background */
   border-radius: 8px;        /* Rounded corners */
   box-shadow: 0 4px 12px rgba(93, 92, 92, 0.1); /* Subtle shadow for 3D effect */
 }
