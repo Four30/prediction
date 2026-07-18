@@ -4,14 +4,14 @@
   display: flex;
   justify-content: center;   /* Centers horizontally */
   align-items: center;       /* Centers vertically */
-  min-height: 100vh;         /* Uses full screen height */
   background-color: #f0f2f5; /* Light background for contrast */
   width: 250px;
 }
 
 .box{
   width: 100%;
-  max-width: 400px;          /* Prevents box from getting too wide */
+  max-width: 400px;    /* Prevents box from getting too wide */
+  min-height: 100vh;     /* Uses full screen height */    
   padding: 30px;             /* Spacing inside the box */
   background-color: #ffffff; /* White box background */
   border-radius: 8px;        /* Rounded corners */
