@@ -9,8 +9,7 @@
 }
 
 .box{
-  width: 100%;
-  max-width: 400px;    /* Prevents box from getting too wide */
+
   min-height: 100vh;     /* Uses full screen height */    
   padding: 30px;             /* Spacing inside the box */
   background-color: #ffffff; /* White box background */
