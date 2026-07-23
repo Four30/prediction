@@ -7,7 +7,7 @@ import pandas as pd
 app = Flask(__name__)
 
 
-@app.route('/')
+@app.route('/', methods =["GET", "POST"])
 def MMO():
     dict = {"9701":"chem_gt\\gt", "9700":"bio_gt\\gt", "9702":"phy_gt\\gt", "9709": "math_gt\\gt"}
     #Getting the old (pre-2026) tables first
