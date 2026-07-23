@@ -1,4 +1,4 @@
-from flask import Flask, request
+from flask import Flask, request, render_template
 from markupsafe import escape
 import glob
 import camelot
@@ -6,7 +6,8 @@ import pandas as pd
 
 app = Flask(__name__)
 
-@app.route('/templates/')
+
+@app.route('/form_info')
 def MMO():
     dict = {"9701":"chem_gt\\gt", "9700":"bio_gt\\gt", "9702":"phy_gt\\gt", "9709": "math_gt\\gt"}
     #Getting the old (pre-2026) tables first
@@ -121,41 +122,43 @@ def MMO():
     rows = info[info["Combo"].str.contains(component_combo, na=False, case = False)]
     rows_mid = rows.median(numeric_only = True)
     rows_mean = round(rows.mean(numeric_only = True),1)
-    
+    information = o
+    result = o
     if len(rows_mean) == 6:
         a_star_mean, a_mean, b_mean,c_mean, d_mean, e_mean = rows.mean(numeric_only = True)
-        return f"For the component combination {escape(component_combo)}, these are the median scores and mean scores respectively:\n median \n {escape(rows_mid)},\n mean \n {escape(rows_mean)}"
+        information = f"For the component combination {escape(component_combo)}, these are the median scores and mean scores respectively:\n median \n {escape(rows_mid)},\n mean \n {escape(rows_mean)}"
         if userscore > a_star_mean and a_star_mean != 0:
-            return "Your grade is higher than the mean of A*, so likely you may be getting an A*"
+            result = "Your grade is higher than the mean of A*, so likely you may be getting an A*"
         elif a_mean<userscore<a_star_mean:
-            return "Your grade is higher than the mean of A, but lower than A*, so likely you may be getting an A."
+            result = "Your grade is higher than the mean of A, but lower than A*, so likely you may be getting an A."
         elif b_mean<userscore<a_mean:
-            return "Your grade is higher than the mean of B, but lower than A, so likely you may be getting an B."
+            result = "Your grade is higher than the mean of B, but lower than A, so likely you may be getting an B."
         elif c_mean<userscore<b_mean:
-            return "Your grade is higher than the mean of C, but lower than B, so likely you may be getting an C."
+            result = "Your grade is higher than the mean of C, but lower than B, so likely you may be getting an C."
         elif d_mean<userscore<c_mean:
-            return "Your grade is higher than the mean of D, but lower than C, so likely you may be getting an D."
+            result = "Your grade is higher than the mean of D, but lower than C, so likely you may be getting an D."
         elif e_mean<userscore<d_mean:
-            return "Your grade is higher than the mean of E, but lower than D, so likely you may be getting an E."
+            result = "Your grade is higher than the mean of E, but lower than D, so likely you may be getting an E."
         elif userscore<e_mean:
-            return "Your grade is below the mean of E, so you're probably having the grade U."
+            result = "Your grade is below the mean of E, so you're probably having the grade U."
         else:
-            return"Seems this can't be handled.Sorry!"
+            result ="Seems this can't be handled.Sorry!"
             
     elif len(rows_mean) == 5:
         a_mean, b_mean,c_mean, d_mean, e_mean = rows.mean(numeric_only = True)
-        return(f"For the component combination {escape(component_combo)}, these are the median scores and mean scores respectively:\n median \n {escape(rows_mid)},\n mean \n {escape(rows_mean)}")
+        information = (f"For the component combination {escape(component_combo)}, these are the median scores and mean scores respectively:\n median \n {escape(rows_mid)},\n mean \n {escape(rows_mean)}")
         if userscore>a_mean:
-            return("Your grade is higher than the mean of a, so likely you may be getting an a.")
+            result= ("Your grade is higher than the mean of a, so likely you may be getting an a.")
         elif b_mean<userscore<a_mean:
-            return("Your grade is higher than the mean of b, but lower than a, so likely you may be getting an b.")
+            result = ("Your grade is higher than the mean of b, but lower than a, so likely you may be getting an b.")
         elif c_mean<userscore<b_mean:
-            return("Your grade is higher than the mean of c, but lower than b, so likely you may be getting an c.")
+            result = ("Your grade is higher than the mean of c, but lower than b, so likely you may be getting an c.")
         elif d_mean<userscore<c_mean:
-            return("Your grade is higher than the mean of d, but lower than c, so likely you may be getting an d.")
+            result = ("Your grade is higher than the mean of d, but lower than c, so likely you may be getting an d.")
         elif e_mean<userscore<d_mean:
-            return("Your grade is higher than the mean of E, but lower than d, so likely you may be getting an e.")
+            result =("Your grade is higher than the mean of E, but lower than d, so likely you may be getting an e.")
         elif userscore<e_mean:
-            return("Your grade is below the mean of e, so you're probably having the grade u.")
+            result =("Your grade is below the mean of e, so you're probably having the grade u.")
         else:
-            return("Seems this can't be handled.Sorry!")
+            result =("Seems this can't be handled.Sorry!")
+    return render_template('frontend_prototype.html',information, result)
