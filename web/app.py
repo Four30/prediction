@@ -161,4 +161,4 @@ def MMO():
             result =("Your grade is below the mean of e, so you're probably having the grade u.")
         else:
             result =("Seems this can't be handled.Sorry!")
-    return render_template('frontend_prototype.html',information, result)
+    return render_template('frontend_prototype.html',information =information, result = result)
