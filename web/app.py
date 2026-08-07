@@ -7,8 +7,9 @@ import pandas as pd
 app = Flask(__name__)
 
 
-@app.route('/', methods =["GET", "POST"])
-def MMO():
+@app.route('/')
+@app.route('/frontend_prototype')
+def loading():
     dict = {"9701":"chem_gt\\gt", "9700":"bio_gt\\gt", "9702":"phy_gt\\gt", "9709": "math_gt\\gt"}
     #Getting the old (pre-2026) tables first
     path_input = request.form["edu_level"]
@@ -113,17 +114,15 @@ def MMO():
     A2numeric_cols = [ 'A*','A', 'B', 'C', 'D', 'E']
     A2_tables[A2numeric_cols] = A2_tables[A2numeric_cols].apply(pd.to_numeric, errors = "coerce") 
 
-
-    #midmeanoption
-#cannot use option cuz there's none like that
-    info = request.form["exam"]
+def MMO():
+    info = request.form.get("exam")
     component_combo =request.form["components"]
     userscore = request.form["total_score"]
     rows = info[info["Combo"].str.contains(component_combo, na=False, case = False)]
     rows_mid = rows.median(numeric_only = True)
     rows_mean = round(rows.mean(numeric_only = True),1)
-    information = o
-    result = o
+    information = "" 
+    result = ""
     if len(rows_mean) == 6:
         a_star_mean, a_mean, b_mean,c_mean, d_mean, e_mean = rows.mean(numeric_only = True)
         information = f"For the component combination {escape(component_combo)}, these are the median scores and mean scores respectively:\n median \n {escape(rows_mid)},\n mean \n {escape(rows_mean)}"
@@ -162,3 +161,7 @@ def MMO():
         else:
             result =("Seems this can't be handled.Sorry!")
     return render_template('frontend_prototype.html',information =information, result = result)
+
+
+if __name__ == "__main__":
+    app.run(host="0.0.0.0",port =8000)

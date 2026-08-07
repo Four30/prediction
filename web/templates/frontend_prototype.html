@@ -2,26 +2,26 @@
 <html>
     <head>
         <title>Prediction.</title>
-        <link rel="stylesheet" href="css_frontend_prototype.css"/>
+        <link rel="stylesheet" href="{{ url_for('static', filename= 'templates/css_frontend_prototype.css') }}">
     </head>
     <body>
         <div class = ""></div>
         <div class ="box">
             <div class="form">
-                <form action ='/', method = "POST" >
-                    <label for = "edu_level"><h3>Pick your education level.</h3></label>
+                <form action ='/submit', method = "POST" >
+                    <label for = "exam"><h3>Pick your education level.</h3></label>
                     <select id="edu_level", name = "exam">
-                        <option name="blank"></option>
-                        <option name="education-AS"><p>AS Level</p></option>
-                        <option  name="education-A2"><p> A Level</p></option>
+                        <option value="blank"></option>
+                        <option value="education-AS"><p>AS Level</p></option>
+                        <option  value="education-A2"><p> A Level</p></option>
                     </select><br/><br/>
                     <label for = "sub_code"><h3>Pick subject to predict.</h3></label>
-                    <select id = "sub_code">
-                        <option name="blank"></option>
-                        <option  name="math_code"><p>9709-mathematics</p></option>
-                        <option name="bio_code"><p>9700-biology</p></option>
-                        <option name="chem_code"><p>9701-chemistry</p></option>
-                        <option name="phy_code"><p>9702-physics</p></option>
+                    <select id = "sub_code" name ="sub_code">
+                        <option value="blank"></option>
+                        <option  value="9709"><p>9709-mathematics</p></option>
+                        <option value="9700"><p>9700-biology</p></option>
+                        <option value="9701"><p>9701-chemistry</p></option>
+                        <option value="9702"><p>9702-physics</p></option>
                     </select><br/><br/>
                     <label for = "component"><h3>What are the components you took?</h3></label>
                     <input id = "component" type ="text" name="components"placeholder= "e.g. 12, 22, 32 (be careful of the spacing)"/><br/><br/>
