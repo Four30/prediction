@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -6,13 +5,13 @@
 </head>
 <body>
     <h2>Submission Successful!</h2>
-    <!-- Flask will inject the data into these placeholders -->
+    
     <p>For your components {{ component }}:</p><br>
-    <p> The median score for each grade:</p> <br> <p> {{ info_mid }}</p><br>
-    <p> The mean score for each grade:</p> <br> <p> {{ info_mean }}</p> <br>
-
+    <p> The median score for each grade, in descending order from highest grade to lowest: {{ mid }}</p>
+    <p> The mean score for each grade, in descending order from highest grade to lowest: {{ mean }}</p>
+    <p> Extra Information: {{ information }}</p>
     <p> {{ result }} </p>
     
-    <a href="web\templates\frontend_prototype.html">Go Back to input</a>
+    <a href="{{ url_for('show_form')}}">Go Back to input</a> 
 </body>
 </html>
