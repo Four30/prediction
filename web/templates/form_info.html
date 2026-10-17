@@ -1,17 +1,22 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <title>Results Page</title>
-</head>
-<body>
-    <h2>Submission Successful!</h2>
+    <head>
+        <title>Results Page</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename= '/css_info.css') }}">
+    </head>
+    </head>
+    <body>
+        <div class="infobox">
+            <h2>Submission Successful!</h2>
     
-    <p>For your components {{ component }}:</p><br>
-    <p> The median score for each grade, in descending order from highest grade to lowest: {{ mid }}</p>
-    <p> The mean score for each grade, in descending order from highest grade to lowest: {{ mean }}</p>
-    <p> Extra Information: {{ information }}</p>
-    <p> {{ result }} </p>
-    
-    <a href="{{ url_for('show_form')}}">Go Back to input</a> 
-</body>
+            <p>For your components {{ component }}:</p><br>
+            <p> The median score for each grade, in descending order from highest grade to lowest: {{ mid }}</p>
+            <p> The mean score for each grade, in descending order from highest grade to lowest: {{ mean }}</p>
+            <p> Extra Information: {{ information }}</p>
+            <p> {{ result }} </p>
+            <div class ="return">
+                <a href="{{ url_for('show_form')}}"><h2>Go Back to input</h2></a> 
+            </div>
+        </div>
+    </body>
 </html>
