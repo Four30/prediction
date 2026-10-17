@@ -6,7 +6,7 @@ from markupsafe import escape
 
 app = Flask(__name__)
 
-# Route to display the HTML form
+
 @app.route('/')
 def show_form():
     return render_template('frontend_prototype.html')
@@ -191,5 +191,5 @@ def loading():
 #    return render_template('form_info.html',information =information,result = result)
     
 
-if __name__ == '__main__':
-    app.run(debug=False)
+#if __name__ == '__main__':
+#    app.run(debug=False)
