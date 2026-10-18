@@ -186,7 +186,7 @@ def loading():
         elif userscore<e_mean:
             return render_template('form_info.html',information = "No extra information!",component = component_combo,mean = mean,mid = mid,result="Your grade is below the mean of e, so you're probably having the grade u.")
     else:
-        return render_template('error_page.html',information ="Unable to process data. Can't retrieve values for your component, make sure that \n i. your components are listed in order, e.g. 12, 22, and \n ii. there are spaces between your components, like this: 12, 52")
+        return render_template('form_info.html',information ="Unable to process data. Can't retrieve values for your component, make sure that \n i. your components are listed in order, e.g. 12, 22, and \n ii. there are spaces between your components, like this: 12, 52")
            
 #    return render_template('form_info.html',information =information,result = result)
     
