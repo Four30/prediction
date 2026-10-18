@@ -34,10 +34,12 @@ def loading():
     elif info == "education-A2":
         info = subject + "/" + subject + "_A2.csv"
 
-    info = pd.read_csv(info)
+    df = pd.read_csv(info)
+    df = df.dropna(axis=1, how='all')
+
     
 
-    rows = info[info[0].str.contains(component_combo, na=False, case = False)]
+    rows = df[df[0].str.contains(component_combo, na=False, case = False)]
     rows_mid = rows.median(numeric_only = True)
     rows_mean = round(rows.mean(numeric_only = True),1)
 
