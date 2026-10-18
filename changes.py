@@ -151,19 +151,19 @@ def loading():
         
         
         if userscore > a_mean and a_star_mean != 0:
-            return render_template('web\\static\\form_info.html',information = "No extra information!",component = component_combo,mean = mean,mid = mid, result="Your grade is higher than the mean of A, so likely you may be getting an A*")
+            return render_template('form_info.html',information = "No extra information!",component = component_combo,mean = mean,mid = mid, result="Your grade is higher than the mean of A, so likely you may be getting an A*")
         elif a_mean<userscore<a_star_mean:
-            return render_template('web\\static\\form_info.html',information = "No extra information!",component = component_combo,mean = mean,mid = mid,result="Your grade is higher than the mean of A, but lower than A*, so likely you may be getting an A.")
+            return render_template('form_info.html',information = "No extra information!",component = component_combo,mean = mean,mid = mid,result="Your grade is higher than the mean of A, but lower than A*, so likely you may be getting an A.")
         elif b_mean<userscore<a_mean:
-            return render_template('web\\static\\form_info.html',information = "No extra information!",component = component_combo,mean = mean,mid = mid,result= "Your grade is higher than the mean of B, but lower than A, so likely you may be getting an B.")
+            return render_template('form_info.html',information = "No extra information!",component = component_combo,mean = mean,mid = mid,result= "Your grade is higher than the mean of B, but lower than A, so likely you may be getting an B.")
         elif c_mean<userscore<b_mean:
-            return render_template('web\\static\\form_info.html',information = "No extra information!",component = component_combo,mean = mean,mid = mid,result="Your grade is higher than the mean of C, but lower than B, so likely you may be getting an C.")
+            return render_template('form_info.html',information = "No extra information!",component = component_combo,mean = mean,mid = mid,result="Your grade is higher than the mean of C, but lower than B, so likely you may be getting an C.")
         elif d_mean<userscore<c_mean:
-            return render_template('web\\static\\form_info.html',information = "No extra information!",component = component_combo,mean = mean,mid = mid,result= "Your grade is higher than the mean of D, but lower than C, so likely you may be getting an D.")
+            return render_template('form_info.html',information = "No extra information!",component = component_combo,mean = mean,mid = mid,result= "Your grade is higher than the mean of D, but lower than C, so likely you may be getting an D.")
         elif e_mean<userscore<d_mean:
-           return render_template('web\\static\\form_info.html',information = "No extra information!",component = component_combo,mean = mean,mid = mid,result= "Your grade is higher than the mean of E, but lower than D, so likely you may be getting an E.")
+           return render_template('form_info.html',information = "No extra information!",component = component_combo,mean = mean,mid = mid,result= "Your grade is higher than the mean of E, but lower than D, so likely you may be getting an E.")
         elif userscore<e_mean:
-            return render_template('web\\static\\form_info.html',information = "No extra information!",component = component_combo,mean = mean,mid = mid,result= "Your grade is below the mean of E, so you're probably having the grade U.")
+            return render_template('form_info.html',information = "No extra information!",component = component_combo,mean = mean,mid = mid,result= "Your grade is below the mean of E, so you're probably having the grade U.")
         
             
     elif len(rows_mean) == 5:
@@ -174,19 +174,19 @@ def loading():
         mid = [ a_mid, b_mid, c_mid, d_mid, e_mid]
         information = f"For the component combination {escape(component_combo)}, these are the median scores and mean scores respectively:\n median \n {escape(mid)},\n mean \n {escape(mean)}"
         if userscore>a_mean:
-            return render_template('web\\static\\form_info.html',information = "No extra information!", component = component_combo,mean = mean,mid = mid,result = "Your grade is higher than the mean of a, so likely you may be getting an a.")
+            return render_template('form_info.html',information = "No extra information!", component = component_combo,mean = mean,mid = mid,result = "Your grade is higher than the mean of a, so likely you may be getting an a.")
         elif b_mean<userscore<a_mean:
-            return render_template('web\\static\\form_info.html',information = "No extra information!",component = component_combo,mean = mean,mid = mid,result="Your grade is higher than the mean of b, but lower than a, so likely you may be getting an b.")
+            return render_template('form_info.html',information = "No extra information!",component = component_combo,mean = mean,mid = mid,result="Your grade is higher than the mean of b, but lower than a, so likely you may be getting an b.")
         elif c_mean<userscore<b_mean:
-            return render_template('web\\static\\form_info.html',information = "No extra information!",component = component_combo,mean = mean,mid = mid,result="Your grade is higher than the mean of c, but lower than b, so likely you may be getting an c.")
+            return render_template('form_info.html',information = "No extra information!",component = component_combo,mean = mean,mid = mid,result="Your grade is higher than the mean of c, but lower than b, so likely you may be getting an c.")
         elif d_mean<userscore<c_mean:
-            return render_template('web\\static\\form_info.html',information = "No extra information!",component = component_combo,mean = mean,mid = mid,result="Your grade is higher than the mean of d, but lower than c, so likely you may be getting an d.")
+            return render_template('form_info.html',information = "No extra information!",component = component_combo,mean = mean,mid = mid,result="Your grade is higher than the mean of d, but lower than c, so likely you may be getting an d.")
         elif e_mean<userscore<d_mean:
-            return render_template('web\\static\\form_info.html',information = "No extra information!",component = component_combo,mean = mean,mid = mid,result="Your grade is higher than the mean of E, but lower than d, so likely you may be getting an e.")
+            return render_template('form_info.html',information = "No extra information!",component = component_combo,mean = mean,mid = mid,result="Your grade is higher than the mean of E, but lower than d, so likely you may be getting an e.")
         elif userscore<e_mean:
-            return render_template('web\\static\\form_info.html',information = "No extra information!",component = component_combo,mean = mean,mid = mid,result="Your grade is below the mean of e, so you're probably having the grade u.")
+            return render_template('form_info.html',information = "No extra information!",component = component_combo,mean = mean,mid = mid,result="Your grade is below the mean of e, so you're probably having the grade u.")
     else:
-        return render_template('web\\static\\form_info.html',information ="Unable to process data. Can't retrieve values for your component, make sure that \n i. your components are listed in order, e.g. 12, 22, and \n ii. there are spaces between your components, like this: 12, 52")
+        return render_template('error_page.html',information ="Unable to process data. Can't retrieve values for your component, make sure that \n i. your components are listed in order, e.g. 12, 22, and \n ii. there are spaces between your components, like this: 12, 52")
            
 #    return render_template('form_info.html',information =information,result = result)
     
