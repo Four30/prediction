@@ -39,7 +39,7 @@ def loading():
 
     
 
-    rows = df[df[0].str.contains(component_combo, na=False, case = False)]
+    rows = df[df["Combo"].str.contains(component_combo, na=False, case = False)]
     rows_mid = rows.median(numeric_only = True)
     rows_mean = round(rows.mean(numeric_only = True),1)
 
