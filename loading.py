@@ -113,5 +113,5 @@ A2_tables[A2numeric_cols] = A2_tables[A2numeric_cols].apply(pd.to_numeric, error
 
 
 
-AS_tables.to_csv(subject +'_A2.csv')
-A2_tables.to_csv(subject +'_AS.csv')
+AS_tables.to_csv(subject +'_AS.csv')
+A2_tables.to_csv(subject +'_A2.csv')

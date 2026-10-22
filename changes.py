@@ -35,7 +35,7 @@ def loading():
         info = subject + "/" + subject + "_A2.csv"
 
     df = pd.read_csv(info)
-    df = df.dropna(axis=1, how='all')
+    df = df.drop(["Unnamed: 0"], axis='columns')
 
     
 
