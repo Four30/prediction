@@ -36,6 +36,7 @@ def loading():
 
     df = pd.read_csv(info)
     df = df.drop(["Unnamed: 0"], axis='columns')
+    df = df.drop(["Max"], axis='columns')
 
     
 
