@@ -8,7 +8,7 @@ import os
     
 subject = str(input("Enter code"))
 
-dict = {"9701":"chem_gt/gt", "9700":"bio_gt/gt", "9702":"phy_gt/gt", "9709": "math_gt/gt"}
+dict = {"9701":"chem_gt/gt", "9700":"bio_gt/gt", "9702":"phy_gt/gt", "9709": "math_gt/gt", "9699":"soc_gt", "9231":"fm_gt", "9708":"econ_gt", "9609":"bus_gt"}
 #Getting the old (pre-2026) tables first
     
 chem9701 = dict[subject]
@@ -113,5 +113,5 @@ A2_tables[A2numeric_cols] = A2_tables[A2numeric_cols].apply(pd.to_numeric, error
 
 
 
-AS_tables.to_csv(subject +'_AS.csv')
-A2_tables.to_csv(subject +'_A2.csv')
+AS_tables.to_csv(subject + '\\' + subject +'_AS.csv')
+A2_tables.to_csv(subject + '\\' + subject +'_A2.csv')
