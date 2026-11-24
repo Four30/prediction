@@ -53,9 +53,10 @@ def loading():
         a_star_mid, a_mid, b_mid, c_mid, d_mid, e_mid = rows_mid
         mid = [a_star_mid, a_mid, b_mid, c_mid, d_mid, e_mid]
         
-        
-        if userscore > a_mean and a_star_mean != 0:
+        if userscore > a_star_mean and a_star_mean != 0:
             return render_template('form_info.html',information = "No extra information!",component = component_combo,mean = mean,mid = mid, result="Your grade is higher than the mean of A, so likely you may be getting an A*")
+        elif userscore > a_mean and a_star_mean != 0:
+            return render_template('form_info.html',information = "No extra information!",component = component_combo,mean = mean,mid = mid, result="Your grade is higher than the mean of A,but lower than the mean of A*, so likely you may be getting an A")
         elif a_mean<userscore<a_star_mean:
             return render_template('form_info.html',information = "No extra information!",component = component_combo,mean = mean,mid = mid,result="Your grade is higher than the mean of A, but lower than A*, so likely you may be getting an A.")
         elif b_mean<userscore<a_mean:
